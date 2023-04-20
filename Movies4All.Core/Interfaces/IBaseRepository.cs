@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Movies4All.Core.Interfaces
 {
-    public interface IBaseRepository
+    public interface IBaseRepository<Tentity> where Tentity : class
     {
+        Task<IEnumerable<Tentity>> GetAllAsync();
     }
 }

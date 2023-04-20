@@ -66,3 +66,5 @@ C:\Users\Hp\Desktop\DOTNET Core\Movies4All\Movies4All\obj\Debug\net6.0\refint\Mo
 C:\Users\Hp\Desktop\DOTNET Core\Movies4All\Movies4All\obj\Debug\net6.0\Movies4All.App.pdb
 C:\Users\Hp\Desktop\DOTNET Core\Movies4All\Movies4All\obj\Debug\net6.0\Movies4All.App.genruntimeconfig.cache
 C:\Users\Hp\Desktop\DOTNET Core\Movies4All\Movies4All\obj\Debug\net6.0\ref\Movies4All.App.dll
+C:\Users\Hp\Desktop\DOTNET Core\Movies4All\Movies4All\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Hp\Desktop\DOTNET Core\Movies4All\Movies4All\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll

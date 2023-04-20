@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Movies4All.Core\Movies4All.Core.csproj" />
     <ProjectReference Include="..\Movies4All.Data\Movies4All.Data.csproj" />
   </ItemGroup>

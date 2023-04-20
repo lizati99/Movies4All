@@ -1,4 +1,5 @@
-﻿using Movies4All.Core.Interfaces;
+﻿using Movies4All.App.Models;
+using Movies4All.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,13 @@ namespace Movies4All.Core
 {
     public interface IUnitOfWork:IDisposable
     {
-        //IBaseRepository<Movie> Movies { get; }
+        IBaseRepository<Movie> Movies { get; }
+        IBaseRepository<Actor> Actors { get; }
+        IBaseRepository<Cast> Casts { get; }
+        IBaseRepository<Director> Directors { get; }
+        IBaseRepository<Genre> Genres { get; }
+        IBaseRepository<Rating> Ratings { get; }
+
         int Complete();
     }
 }

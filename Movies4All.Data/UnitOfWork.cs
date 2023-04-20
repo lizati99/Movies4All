@@ -1,6 +1,11 @@
-﻿using Movies4All.Core;
+﻿using Movies4All.App.Data;
+using Movies4All.App.Models;
+using Movies4All.Core;
+using Movies4All.Core.Interfaces;
+using Movies4All.Data.Repositories;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,18 +14,37 @@ namespace Movies4All.Data
 {
     public class UnitOfWork : IUnitOfWork
     {
-        public UnitOfWork()
-        {
+        private readonly ApplicationDbContext _context;
+        public IBaseRepository<Movie> Movies { get; private set; }
 
+        public IBaseRepository<Actor> Actors { get; private set; }
+
+        public IBaseRepository<Cast> Casts { get; private set; }
+
+        public IBaseRepository<Director> Directors { get; private set; }
+
+        public IBaseRepository<Genre> Genres { get; private set; }
+
+        public IBaseRepository<Rating> Ratings { get; private set; }
+        public UnitOfWork(ApplicationDbContext context)
+        {
+            this._context = context;
+            Movies = new BaseRepository<Movie>(_context);
+            Actors = new BaseRepository<Actor>(_context);
+            Casts = new BaseRepository<Cast>(_context);
+            Directors = new BaseRepository<Director>(_context);
+            Genres = new BaseRepository<Genre>(_context);
+            Ratings = new BaseRepository<Rating>(_context);
         }
+
         public int Complete()
         {
-            return 1;
+            return _context.SaveChanges();
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _context.Dispose();
         }
     }
 }
