@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Consts\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>

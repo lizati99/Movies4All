@@ -20,6 +20,7 @@ namespace Movies4All.Core.Mapper
                 .ForMember(dest => dest.NameGenre, act => act.MapFrom(src => src.Genre.Name))
                 .ForMember(dest => dest.NameRating, act => act.MapFrom(src => src.Rating.Name));
             CreateMap<MovieDto, Movie>();
+            CreateMap<Movie, MovieDto>();
             //Genre 
             CreateMap<Genre, GenreDto>();
             CreateMap<GenreDto, Genre>();
@@ -37,7 +38,11 @@ namespace Movies4All.Core.Mapper
             //Casts
             CreateMap<Cast,CastDto>();
             CreateMap<CastDto, Cast>();
-
+            CreateMap<Cast, CastDetailsDto>()
+                .ForMember(dest => dest.MovieName, act => act.MapFrom(src => src.Movie.Title))
+                .ForMember(dest => dest.ActorName, act => act.MapFrom(src => src.Actor.LastName + " " + src.Actor.FirstName))
+                .ForMember(dest => dest.MovieId, act => act.MapFrom(src => src.Movie.Id))
+                .ForMember(dest => dest.ActorId, act => act.MapFrom(src => src.Actor.Id));
         }
     }
 }

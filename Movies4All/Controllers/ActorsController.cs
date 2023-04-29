@@ -80,12 +80,12 @@ namespace Movies4All.App.Controllers
         }
 
         // PUT api/<ActorsController>/5
-        [HttpPut("UpdateAcotor/{id}")]
+        [HttpPut("UpdateActor/{id}")]
         public IActionResult UpdateActor(int id, [FromBody] ActorDto dto)
         {
             var existingActor = _unitOfWork.Actors.isValidEntity(a => a.Id == id);
             if (!existingActor)
-                return NotFound("Invalid Actor!!!");
+                return BadRequest("Invalid Actor!!!");
 
             dto.Id = id;
             var actor = _mapper.Map<Actor>(dto);

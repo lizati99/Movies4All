@@ -20,6 +20,7 @@ namespace Movies4All.App.Controllers
             this._unitOfWork = unitOfWork;
             this._mapper = mapper;
         }
+        
         // GET: api/<CastsController>
         [HttpGet("GetAllCasts")]
         public async Task<IActionResult> GetAllCasts()
@@ -35,15 +36,24 @@ namespace Movies4All.App.Controllers
         [HttpGet("GetById/{id}")]
         public IActionResult GetById(int id)
         {
-            var cast=_unitOfWork.Casts.GetById(id);
+            var cast = _unitOfWork.Casts.GetById(c => c.Id == id, new[] { "Movie", "Actor"});
             if (cast == null)
                 return NotFound("Invalid cast");
-            return Ok(_mapper.Map<CastDto>(cast));
+            return Ok(_mapper.Map<CastDetailsDto>(cast));
+        }
+        [HttpGet("GetAllInfo")]
+        public async Task<IActionResult> GetAllInfo()
+        {
+            var casts = await _unitOfWork.Casts.GetAllAsync(new[] { "Actor", "Movie" });
+            if (casts == null)
+                return NotFound("Invalid casts!!!");
+
+            return Ok(_mapper.Map<IEnumerable<CastDetailsDto>>(casts));
         }
 
         // POST api/<CastsController>
         [HttpPost("AddCast")]
-        public IActionResult AddCast([FromBody] CastDto dto)
+        public IActionResult AddCast([FromBody] CastDetailsDto dto)
         {
             var existingCast = _unitOfWork.Casts.isValidEntity(c=>c.Id==dto.Id);
             if (existingCast)
@@ -57,7 +67,7 @@ namespace Movies4All.App.Controllers
 
         // PUT api/<CastsController>/5
         [HttpPut("UpdateCast/{id}")]
-        public IActionResult UpdateCast(int id, [FromBody] CastDto dto)
+        public IActionResult UpdateCast(int id, [FromBody] CastDetailsDto dto)
         {
             var existingCast = _unitOfWork.Casts.isValidEntity(c => c.Id == dto.Id);
             if (!existingCast)
