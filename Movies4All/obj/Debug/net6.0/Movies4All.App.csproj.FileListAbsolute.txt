@@ -68,3 +68,6 @@ C:\Users\Hp\Desktop\DOTNET Core\Movies4All\Movies4All\obj\Debug\net6.0\Movies4Al
 C:\Users\Hp\Desktop\DOTNET Core\Movies4All\Movies4All\obj\Debug\net6.0\ref\Movies4All.App.dll
 C:\Users\Hp\Desktop\DOTNET Core\Movies4All\Movies4All\bin\Debug\net6.0\Humanizer.dll
 C:\Users\Hp\Desktop\DOTNET Core\Movies4All\Movies4All\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Hp\Desktop\DOTNET Core\Movies4All\Movies4All\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Hp\Desktop\DOTNET Core\Movies4All\Movies4All\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Hp\Desktop\DOTNET Core\Movies4All\Movies4All\bin\Debug\net6.0\Microsoft.Extensions.Configuration.UserSecrets.dll

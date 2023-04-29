@@ -1,0 +1,19 @@
+﻿using Movies4All.App.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Movies4All.Core.Dto
+{
+    public class MovieDto
+    {
+        public int Id { get; set; }
+        public string Title { get; set; } = null!;
+        public DateTime ReleaseDate { get; set; }
+        public int GenreId { get; set; }
+        public int DirectorId { get; set; }
+        public int RatingId { get; set; }
+    }
+}

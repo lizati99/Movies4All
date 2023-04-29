@@ -10,7 +10,7 @@ namespace Movies4All.Core
 {
     public interface IUnitOfWork:IDisposable
     {
-        IBaseRepository<Movie> Movies { get; }
+        IMovieRepository Movies { get; }
         IBaseRepository<Actor> Actors { get; }
         IBaseRepository<Cast> Casts { get; }
         IBaseRepository<Director> Directors { get; }

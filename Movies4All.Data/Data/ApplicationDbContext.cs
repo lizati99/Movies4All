@@ -69,13 +69,13 @@ namespace Movies4All.App.Data
                 entity.HasOne(d => d.Actor)
                     .WithMany(p => p.Casts)
                     .HasForeignKey(d => d.ActorId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__Cast__ActorID__31EC6D26");
 
                 entity.HasOne(d => d.Movie)
                     .WithMany(p => p.Casts)
                     .HasForeignKey(d => d.MovieId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__Cast__MovieID__30F848ED");
             });
 
@@ -126,19 +126,19 @@ namespace Movies4All.App.Data
                 entity.HasOne(d => d.Director)
                     .WithMany(p => p.Movies)
                     .HasForeignKey(d => d.DirectorId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__Movies__Director__2D27B809");
 
                 entity.HasOne(d => d.Genre)
                     .WithMany(p => p.Movies)
                     .HasForeignKey(d => d.GenreId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__Movies__GenreID__2C3393D0");
 
                 entity.HasOne(d => d.Rating)
                     .WithMany(p => p.Movies)
                     .HasForeignKey(d => d.RatingId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__Movies__RatingID__2E1BDC42");
             });
 

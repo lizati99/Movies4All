@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\all vidio\\project\\Movies4All\\Movies4All.Core\\Movies4All.Core.csproj": {}
+    "C:\\Users\\Hp\\Desktop\\DOTNET Core\\Movies4All\\Movies4All.Core\\Movies4All.Core.csproj": {}
   },
   "projects": {
-    "D:\\all vidio\\project\\Movies4All\\Movies4All.Core\\Movies4All.Core.csproj": {
+    "C:\\Users\\Hp\\Desktop\\DOTNET Core\\Movies4All\\Movies4All.Core\\Movies4All.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\all vidio\\project\\Movies4All\\Movies4All.Core\\Movies4All.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Hp\\Desktop\\DOTNET Core\\Movies4All\\Movies4All.Core\\Movies4All.Core.csproj",
         "projectName": "Movies4All.Core",
-        "projectPath": "D:\\all vidio\\project\\Movies4All\\Movies4All.Core\\Movies4All.Core.csproj",
-        "packagesPath": "C:\\Users\\Omar\\.nuget\\packages\\",
-        "outputPath": "D:\\all vidio\\project\\Movies4All\\Movies4All.Core\\obj\\",
+        "projectPath": "C:\\Users\\Hp\\Desktop\\DOTNET Core\\Movies4All\\Movies4All.Core\\Movies4All.Core.csproj",
+        "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hp\\Desktop\\DOTNET Core\\Movies4All\\Movies4All.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Omar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.UserSecrets": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -55,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

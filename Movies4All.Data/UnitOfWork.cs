@@ -15,7 +15,7 @@ namespace Movies4All.Data
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _context;
-        public IBaseRepository<Movie> Movies { get; private set; }
+        public IMovieRepository Movies { get; private set; }
 
         public IBaseRepository<Actor> Actors { get; private set; }
 
@@ -29,7 +29,7 @@ namespace Movies4All.Data
         public UnitOfWork(ApplicationDbContext context)
         {
             this._context = context;
-            Movies = new BaseRepository<Movie>(_context);
+            Movies = new MoviesRepository(_context);
             Actors = new BaseRepository<Actor>(_context);
             Casts = new BaseRepository<Cast>(_context);
             Directors = new BaseRepository<Director>(_context);
