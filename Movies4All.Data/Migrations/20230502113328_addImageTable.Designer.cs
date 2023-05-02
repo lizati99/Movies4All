@@ -12,8 +12,8 @@ using Movies4All.App.Data;
 namespace Movies4All.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230430162452_AddImageTable")]
-    partial class AddImageTable
+    [Migration("20230502113328_addImageTable")]
+    partial class addImageTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

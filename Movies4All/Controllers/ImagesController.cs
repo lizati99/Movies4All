@@ -19,10 +19,19 @@ namespace Movies4All.App.Controllers
             this._unitOfWork = unitOfWork;
             this._mapper = mapper;
         }
-        [HttpPut("UpdateMovieImage/{id}")]
-        public IActionResult UpdateMovieImage(int id, [FromForm] MovieImageDto dto)
+        [HttpGet("GetAllByMovie/{movieId}")]
+        public IActionResult GetAllImagesByMovie(int movieId)
         {
-            var image = _unitOfWork.Images.GetById(m => m.Id == id);
+            var images = _unitOfWork.Images.GetAllImagesByMovie(movieId);
+            if (images != null)
+                return NotFound("Invalid movie imaages.");
+            return Ok(images);
+        }
+
+        [HttpPut("UpdateMovieImage/{id}")]
+        public IActionResult UpdateMovieImage(int ImageId, [FromForm] MovieImageDto dto)
+        {
+            var image = _unitOfWork.Images.GetById(m => m.Id == ImageId);
             if (image==null)
                 return NotFound("Invalid image!!!");
 
@@ -30,7 +39,7 @@ namespace Movies4All.App.Controllers
             _unitOfWork.Images.Delete(image);
 
             //Uploads newest images
-            //var images = _unitOfWork.FileService.SaveImage(id, d);
+            var images = _unitOfWork.FileService.SaveImage(dto.MovieId, dto.Image);
             image = _mapper.Map<Image>(dto);
             _unitOfWork.Images.Update(image);
             _unitOfWork.Complete();

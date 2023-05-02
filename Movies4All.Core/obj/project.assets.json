@@ -1478,19 +1478,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Hp\\.nuget\\packages\\": {}
+    "C:\\Users\\MSI\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hp\\Desktop\\DOTNET Core\\Movies4All\\Movies4All.Core\\Movies4All.Core.csproj",
+      "projectUniqueName": "C:\\Users\\MSI\\Desktop\\Movies4All\\Movies4All.Core\\Movies4All.Core.csproj",
       "projectName": "Movies4All.Core",
-      "projectPath": "C:\\Users\\Hp\\Desktop\\DOTNET Core\\Movies4All\\Movies4All.Core\\Movies4All.Core.csproj",
-      "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hp\\Desktop\\DOTNET Core\\Movies4All\\Movies4All.Core\\obj\\",
+      "projectPath": "C:\\Users\\MSI\\Desktop\\Movies4All\\Movies4All.Core\\Movies4All.Core.csproj",
+      "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MSI\\Desktop\\Movies4All\\Movies4All.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MSI\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1545,7 +1545,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

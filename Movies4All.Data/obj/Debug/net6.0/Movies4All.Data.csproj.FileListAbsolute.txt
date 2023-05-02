@@ -15,3 +15,20 @@ C:\Users\Hp\Desktop\DOTNET Core\Movies4All\Movies4All.Data\obj\Debug\net6.0\refi
 C:\Users\Hp\Desktop\DOTNET Core\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.pdb
 C:\Users\Hp\Desktop\DOTNET Core\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.genruntimeconfig.cache
 C:\Users\Hp\Desktop\DOTNET Core\Movies4All\Movies4All.Data\obj\Debug\net6.0\ref\Movies4All.Data.dll
+C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\bin\Debug\net6.0\Movies4All.Data.deps.json
+C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\bin\Debug\net6.0\Movies4All.Data.runtimeconfig.json
+C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\bin\Debug\net6.0\Movies4All.Data.dll
+C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\bin\Debug\net6.0\Movies4All.Data.pdb
+C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\bin\Debug\net6.0\Movies4All.Core.dll
+C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\bin\Debug\net6.0\Movies4All.Core.pdb
+C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.csproj.AssemblyReference.cache
+C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.AssemblyInfoInputs.cache
+C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.AssemblyInfo.cs
+C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.csproj.CoreCompileInputs.cache
+C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.csproj.CopyComplete
+C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.dll
+C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\obj\Debug\net6.0\refint\Movies4All.Data.dll
+C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.pdb
+C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.genruntimeconfig.cache
+C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\obj\Debug\net6.0\ref\Movies4All.Data.dll

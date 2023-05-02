@@ -53,7 +53,7 @@ namespace Movies4All.App.Controllers
 
         // POST api/<CastsController>
         [HttpPost("AddCast")]
-        public IActionResult AddCast([FromBody] CastDetailsDto dto)
+        public IActionResult AddCast([FromBody] CastDto dto)
         {
             var existingCast = _unitOfWork.Casts.isValidEntity(c=>c.Id==dto.Id);
             if (existingCast)
@@ -67,7 +67,7 @@ namespace Movies4All.App.Controllers
 
         // PUT api/<CastsController>/5
         [HttpPut("UpdateCast/{id}")]
-        public IActionResult UpdateCast(int id, [FromBody] CastDetailsDto dto)
+        public IActionResult UpdateCast(int id, [FromBody] CastDto dto)
         {
             var existingCast = _unitOfWork.Casts.isValidEntity(c => c.Id == dto.Id);
             if (!existingCast)

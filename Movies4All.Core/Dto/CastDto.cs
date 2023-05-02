@@ -10,5 +10,7 @@ namespace Movies4All.Core.Dto
     {
         public int Id { get; set; }
         public string CharacterName { get; set; } = null!;
+        public int MovieId { get; set; }
+        public int ActorId { get; set; }
     }
 }

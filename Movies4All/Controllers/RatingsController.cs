@@ -62,7 +62,7 @@ namespace Movies4All.App.Controllers
 
             dto.Id = id;
             var rating = _mapper.Map<Rating>(dto);
-            _unitOfWork.Ratings.Add(rating);
+            _unitOfWork.Ratings.Update(rating);
             _unitOfWork.Complete();
             return Ok();
         }

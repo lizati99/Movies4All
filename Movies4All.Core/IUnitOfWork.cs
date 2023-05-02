@@ -17,7 +17,7 @@ namespace Movies4All.Core
         IBaseRepository<Director> Directors { get; }
         IBaseRepository<Genre> Genres { get; }
         IBaseRepository<Rating> Ratings { get; }
-        IBaseRepository<Image> Images { get; }
+        IImageService Images { get; }
         IFileService FileService { get; }
 
         int Complete();

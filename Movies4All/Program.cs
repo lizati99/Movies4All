@@ -14,7 +14,7 @@ builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddDbContext<ApplicationDbContext>(
     options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("MovieConnection"))
+        options.UseSqlServer(builder.Configuration.GetConnectionString("MSIConnection"))
     );
 builder.Services.AddControllers();
 builder.Services.AddControllers().AddJsonOptions(x =>
@@ -28,8 +28,8 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: "MyPolicy",
         policy =>
         {
-            //https://192.168.137.131:5025;http://192.168.137.131:5020;https://localhost:5030
-            policy.WithOrigins("https://192.168.137.131:5025",
+            //https://192.168.1.35:5025;http://192.168.137.131:5020;https://localhost:5030
+            policy.WithOrigins("https://192.168.1.35:5025", "http://192.168.1.35:5020", "https://localhost:5030",
                 "http://localhost:3001", "http://localhost:3000")
                     .AllowAnyHeader()
                     .AllowAnyMethod();

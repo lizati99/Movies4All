@@ -27,7 +27,7 @@ namespace Movies4All.Core.Mapper
             //Image
             CreateMap<MovieImageDto, Image>()
                 .ForMember(dest => dest.MovieId, opt => opt.MapFrom(src=>src.MovieId))
-                .ForMember(dest => dest.Name, opt => opt.MapFrom(src=>src.ImageName));
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src=>src.Image));
             CreateMap<IFormFile, Image>();
             //Genre 
             CreateMap<Genre, GenreDto>();

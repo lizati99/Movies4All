@@ -10,6 +10,6 @@ namespace Movies4All.Core.Dto
     public class MovieImageDto
     {
         public int MovieId { get; set; }
-        public IFormFile ImageName { get; set; }
+        public IFormFile Image { get; set; }
     }
 }

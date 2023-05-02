@@ -10,8 +10,5 @@ namespace Movies4All.Core.Dto
     {
         public string MovieName { get; set; } = null;
         public string ActorName { get; set; } = null;
-        public int MovieId { get; set; } 
-        public int ActorId { get; set; } 
-
     }
 }

@@ -29,7 +29,7 @@ namespace Movies4All.Data
         public IBaseRepository<Genre> Genres { get; private set; }
 
         public IBaseRepository<Rating> Ratings { get; private set; }
-        public IBaseRepository<Image> Images { get; private set; }
+        public IImageService Images { get; private set; }
         public IFileService FileService { get; private set; }
         public UnitOfWork(ApplicationDbContext context,IWebHostEnvironment environment)
         {
@@ -41,7 +41,7 @@ namespace Movies4All.Data
             Directors = new BaseRepository<Director>(_context);
             Genres = new BaseRepository<Genre>(_context);
             Ratings = new BaseRepository<Rating>(_context);
-            Images = new BaseRepository<Image>(_context);
+            Images = new ImageService(_context);
             FileService = new FileService(_environment);
         }
 

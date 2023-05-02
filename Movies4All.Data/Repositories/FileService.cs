@@ -76,37 +76,36 @@ namespace Movies4All.Data.Repositories
         }
 
         /* --------- Single Uploads --------- */
-        /*public Tuple<int, string> SaveImage(IFormFile imageFile)
+        public Tuple<int, string, Image> SaveImage(int movieId, IFormFile imageFile)
         {
             try
             {
                 string newFileName = null;
-                if (imageFile != null)
-                {
-                    var uploadsFolder = Path.Combine(_environment.ContentRootPath, "Uploads");
-                    if (!Directory.Exists(uploadsFolder))
-                        Directory.CreateDirectory(uploadsFolder);
+                var image = new Image();
+                var uploadsFolder = Path.Combine(_environment.ContentRootPath, "Uploads");
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
 
-                    var ext = Path.GetExtension(imageFile.Name);
-                    newFileName = Guid.NewGuid().ToString() + "_" + imageFile.Name;
-                    var allowedExtensions = new string[] { ".jpg", ".jpeg", ".png" };
-                    if (!allowedExtensions.Contains(ext))
-                    {
-                        string msg = string.Format("Only {0} extensions are allowed", string.Join(",", allowedExtensions));
-                        return Tuple.Create(0, msg);//or new Tuple<int, string>(0,msg)
-                    }
-                    var fileWithPath = Path.Combine(uploadsFolder, newFileName);
-                    var stream = new FileStream(fileWithPath, FileMode.Create);
-                    imageFile.CopyTo(stream);
-                    stream.Close();
-                    return Tuple.Create(0, newFileName);
+                var ext = Path.GetExtension(imageFile.Name);
+                newFileName = Guid.NewGuid().ToString() + "_" + imageFile.Name;
+                var allowedExtensions = new string[] { ".jpg", ".jpeg", ".png" };
+                if (!allowedExtensions.Contains(ext))
+                {
+                    string msg = string.Format("Only {0} extensions are allowed", string.Join(",", allowedExtensions));
+                    return Tuple.Create(0, msg, image);//or new Tuple<int, string>(0,msg)
                 }
-                return Tuple.Create(0, newFileName);
+                var fileWithPath = Path.Combine(uploadsFolder, newFileName);
+                var stream = new FileStream(fileWithPath, FileMode.Create);
+                imageFile.CopyTo(stream);
+                stream.Close();
+                image.Name = newFileName;
+                image.MovieId = movieId;
+                return Tuple.Create(0, "Upload is succes", image);
             }
             catch (Exception ex)
             {
-                return new Tuple<int, string>(0, ex.Message);
+                return Tuple.Create(0, ex.Message, new Image());
             }
-        }*/
+        }
     }
 }

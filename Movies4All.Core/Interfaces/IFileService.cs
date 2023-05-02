@@ -10,7 +10,8 @@ namespace Movies4All.Core.Interfaces
 {
     public interface IFileService
     {
-        public Tuple<int, string, List<Image>> SaveImage(int movieId, List<IFormFile> imageFile);
-        public bool DeleteImage(string imageFileName);
+        Tuple<int, string, List<Image>> SaveImage(int movieId, List<IFormFile> imageFile);
+        Tuple<int, string, Image> SaveImage(int movieId, IFormFile imageFile);
+        bool DeleteImage(string imageFileName);
     }
 }
