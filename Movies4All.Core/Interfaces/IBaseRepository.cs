@@ -17,6 +17,7 @@ namespace Movies4All.Core.Interfaces
         bool isValidEntity(Expression<Func<Tentity, bool>> criteria);
         void Add(Tentity entity);
         void Delete(Tentity entity);
+        void DeleteRange(IEnumerable<Tentity> entities);
         Tentity Update(Tentity entity);
     }
 }

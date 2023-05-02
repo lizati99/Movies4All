@@ -67,6 +67,10 @@ namespace Movies4All.Data.Repositories
         {
             _context.Set<TEntity>().Remove(entity);
         }
+        public void DeleteRange(IEnumerable<TEntity> entities)
+        {
+            _context.Set<TEntity>().RemoveRange(entities);
+        }
         public TEntity Update(TEntity entity)
         {
             _context.Set<TEntity>().Update(entity);

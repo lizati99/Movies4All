@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Movies4All.App.Models;
 using Movies4All.Core.Dto;
+using Movies4All.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +21,14 @@ namespace Movies4All.Core.Mapper
                 .ForMember(dest => dest.FirstName, act => act.MapFrom(src => src.Director.FirstName))
                 .ForMember(dest => dest.NameGenre, act => act.MapFrom(src => src.Genre.Name))
                 .ForMember(dest => dest.NameRating, act => act.MapFrom(src => src.Rating.Name));
-            CreateMap<MovieDto, Movie>();
+            CreateMap<MovieDto, Movie>()
+                .ForMember(dest => dest.Images, opt => opt.Ignore());
             CreateMap<Movie, MovieDto>();
+            //Image
+            CreateMap<MovieImageDto, Image>()
+                .ForMember(dest => dest.MovieId, opt => opt.MapFrom(src=>src.MovieId))
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src=>src.ImageName));
+            CreateMap<IFormFile, Image>();
             //Genre 
             CreateMap<Genre, GenreDto>();
             CreateMap<GenreDto, Genre>();

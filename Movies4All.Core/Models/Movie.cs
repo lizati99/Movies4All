@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Movies4All.Core.Models;
+using System;
 using System.Collections.Generic;
 
 namespace Movies4All.App.Models
@@ -8,6 +9,7 @@ namespace Movies4All.App.Models
         public Movie()
         {
             Casts = new HashSet<Cast>();
+            Images = new HashSet<Image>();
         }
 
         public int Id { get; set; }
@@ -16,10 +18,10 @@ namespace Movies4All.App.Models
         public int GenreId { get; set; }
         public int DirectorId { get; set; }
         public int RatingId { get; set; }
-
         public virtual Director Director { get; set; } = null!;
         public virtual Genre Genre { get; set; } = null!;
         public virtual Rating Rating { get; set; } = null!;
         public virtual ICollection<Cast> Casts { get; set; }
+        public ICollection<Image> Images { get; set; }
     }
 }

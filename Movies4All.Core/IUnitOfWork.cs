@@ -1,5 +1,6 @@
 ﻿using Movies4All.App.Models;
 using Movies4All.Core.Interfaces;
+using Movies4All.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace Movies4All.Core
         IBaseRepository<Director> Directors { get; }
         IBaseRepository<Genre> Genres { get; }
         IBaseRepository<Rating> Ratings { get; }
+        IBaseRepository<Image> Images { get; }
+        IFileService FileService { get; }
 
         int Complete();
     }

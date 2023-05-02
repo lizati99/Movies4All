@@ -35,6 +35,15 @@ namespace Movies4All.App.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Add Movie Images
+            modelBuilder.Entity<Movie>(entity =>
+            {
+                entity.HasMany(m => m.Images)
+                .WithOne(i => i.Movie)
+                .HasForeignKey(i=>i.MovieId)
+                .HasPrincipalKey(m=>m.Id);
+            });
+
             modelBuilder.Entity<Actor>(entity =>
             {
                 entity.Property(e => e.Id)

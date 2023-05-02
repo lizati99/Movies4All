@@ -175,6 +175,28 @@ namespace Movies4All.Data.Migrations
                     b.ToTable("Ratings");
                 });
 
+            modelBuilder.Entity("Movies4All.Core.Models.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("MovieId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MovieId");
+
+                    b.ToTable("Image");
+                });
+
             modelBuilder.Entity("Movies4All.App.Models.Cast", b =>
                 {
                     b.HasOne("Movies4All.App.Models.Actor", "Actor")
@@ -226,6 +248,17 @@ namespace Movies4All.Data.Migrations
                     b.Navigation("Rating");
                 });
 
+            modelBuilder.Entity("Movies4All.Core.Models.Image", b =>
+                {
+                    b.HasOne("Movies4All.App.Models.Movie", "Movie")
+                        .WithMany("Images")
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Movie");
+                });
+
             modelBuilder.Entity("Movies4All.App.Models.Actor", b =>
                 {
                     b.Navigation("Casts");
@@ -244,6 +277,8 @@ namespace Movies4All.Data.Migrations
             modelBuilder.Entity("Movies4All.App.Models.Movie", b =>
                 {
                     b.Navigation("Casts");
+
+                    b.Navigation("Images");
                 });
 
             modelBuilder.Entity("Movies4All.App.Models.Rating", b =>

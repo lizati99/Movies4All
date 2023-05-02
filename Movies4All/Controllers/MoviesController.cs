@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Movies4All.App.Models;
 using Movies4All.Core;
 using Movies4All.Core.Dto;
+using Movies4All.Core.Models;
 using Movies4All.Data;
 using Movies4All.Data.Repositories;
 
@@ -42,7 +44,7 @@ namespace Movies4All.App.Controllers
         }
         // POST api/<MoviesController>
         [HttpPost("PostMovie")]
-        public IActionResult PostMovie([FromBody] MovieDto dto)
+        public IActionResult PostMovie([FromForm] MovieDto dto)
         {
             var genreIsValid = _unitOfWork.Genres.isValidEntity(g => g.Id == dto.GenreId);
             var ratingIsValid = _unitOfWork.Ratings.isValidEntity(r => r.Id == dto.RatingId);
@@ -52,8 +54,14 @@ namespace Movies4All.App.Controllers
 
             var movieId = _unitOfWork.Movies.GetLastId() + 1;
 
+            var Images = _unitOfWork.FileService.SaveImage(movieId, dto.Images);
+            if (Images.Item1 == 0)
+            {
+                return NotFound(Images.Item2);
+            }
             dto.Id = movieId;
             var movie = _mapper.Map<Movie>(dto);
+            movie.Images = Images.Item3;
             _unitOfWork.Movies.Add(movie);
             _unitOfWork.Complete();
 
@@ -68,7 +76,7 @@ namespace Movies4All.App.Controllers
             return Ok(movie);
         }
         [HttpPut("UpdateMovie/{id}")]
-        public IActionResult UpdateMovie(int id ,[FromBody] MovieDto dto)
+        public IActionResult UpdateMovie(int id ,[FromForm] MovieDto dto)
         {
             var genreIsValid = _unitOfWork.Genres.isValidEntity(g => g.Id == dto.GenreId);
             var ratingIsValid = _unitOfWork.Ratings.isValidEntity(r => r.Id == dto.RatingId);
@@ -79,14 +87,19 @@ namespace Movies4All.App.Controllers
             var existingMovie = _unitOfWork.Movies.isValidEntity(m=>m.Id==id);
             if (!existingMovie)
                 return NotFound("Invalid movie!!!");
+
+
+            var Images = _unitOfWork.FileService.SaveImage(id,dto.Images);
             dto.Id = id;
             var movie = _mapper.Map<Movie>(dto);
+            _unitOfWork.Images.DeleteRange(movie.Images);
+            movie.Images=Images.Item3;
             _unitOfWork.Movies.Update(movie);
             _unitOfWork.Complete();
 
             return Ok(movie);
         }
-        
+
     }
         
 }
