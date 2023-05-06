@@ -9,7 +9,7 @@ namespace Movies4All.Core.Dto
 {
     public class MovieDto
     {
-        public int Id { get; set; }
+        public int Id { get; set; } = 1;
         public string Title { get; set; } = null!;
         public DateTime ReleaseDate { get; set; }
         public int GenreId { get; set; }

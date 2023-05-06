@@ -20,8 +20,7 @@ namespace Movies4All.Data.Repositories
         }
         public IEnumerable<Image> GetAllImagesByMovie(int movieId)
         {
-            var images = _context.Images
-                            .Include("Movies")
+            var images = _context.Image
                             .Where(i=>i.MovieId==movieId).ToList();
             return images;
         }

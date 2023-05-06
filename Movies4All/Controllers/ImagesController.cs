@@ -23,7 +23,7 @@ namespace Movies4All.App.Controllers
         public IActionResult GetAllImagesByMovie(int movieId)
         {
             var images = _unitOfWork.Images.GetAllImagesByMovie(movieId);
-            if (images != null)
+            if (images == null)
                 return NotFound("Invalid movie imaages.");
             return Ok(images);
         }
