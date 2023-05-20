@@ -144,3 +144,7 @@ C:\Users\MSI\Desktop\Movies4All\Movies4All\obj\Debug\net6.0\refint\Movies4All.Ap
 C:\Users\MSI\Desktop\Movies4All\Movies4All\obj\Debug\net6.0\Movies4All.App.pdb
 C:\Users\MSI\Desktop\Movies4All\Movies4All\obj\Debug\net6.0\Movies4All.App.genruntimeconfig.cache
 C:\Users\MSI\Desktop\Movies4All\Movies4All\obj\Debug\net6.0\ref\Movies4All.App.dll
+C:\Users\MSI\Desktop\Movies4All\Movies4All\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\MSI\Desktop\Movies4All\Movies4All\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\MSI\Desktop\Movies4All\Movies4All\bin\Debug\net6.0\BCrypt.Net-Next.dll
+C:\Users\MSI\Desktop\Movies4All\Movies4All\bin\Debug\net6.0\Grpc.Core.Api.dll
