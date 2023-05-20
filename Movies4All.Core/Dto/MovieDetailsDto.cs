@@ -17,5 +17,6 @@ namespace Movies4All.Core.Dto
         public string LastName { get; set; } = null!;
         public string NameGenre { get; set; } = null!;
         public string NameRating { get; set; } = null!;
+        public ICollection<ImageDto> Images { get; set; }
     }
 }

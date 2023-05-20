@@ -11,6 +11,7 @@ namespace Movies4All.Core.Interfaces
     {
         Task<IEnumerable<Tentity>> GetAllAsync();
         Task<IEnumerable<Tentity>> GetAllAsync(string[] includes = null);
+        Task<IEnumerable<Tentity>> GetAllAsync(Expression<Func<Tentity, bool>> criteria, string[] includes = null);
         Task<Tentity> GetByIdAsync(int id);
         Tentity GetById(Expression<Func<Tentity, bool>> criteria, string[] includes = null);
         Tentity GetById(int id);

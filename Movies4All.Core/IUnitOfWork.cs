@@ -19,7 +19,8 @@ namespace Movies4All.Core
         IBaseRepository<Rating> Ratings { get; }
         IImageService Images { get; }
         IFileService FileService { get; }
-
+        IBaseRepository<User> Users { get; }
+        IBaseRepository<Favorite> Favorites { get; }
         int Complete();
     }
 }

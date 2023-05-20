@@ -10,7 +10,7 @@ namespace Movies4All.Core.Interfaces
 {
     public interface IMovieRepository:IBaseRepository<Movie>
     {
-        Task<IEnumerable<MovieDetailsDto>> SpecialGetAllAsync(string[] includes = null);
+        Task<IEnumerable<Movie>> SpecialGetAllAsync();
         int GetLastId();
     }
 }

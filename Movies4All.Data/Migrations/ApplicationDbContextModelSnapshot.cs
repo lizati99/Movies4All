@@ -42,7 +42,7 @@ namespace Movies4All.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Actors");
+                    b.ToTable("Actors", (string)null);
                 });
 
             modelBuilder.Entity("Movies4All.App.Models.Cast", b =>
@@ -94,7 +94,7 @@ namespace Movies4All.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Directors");
+                    b.ToTable("Directors", (string)null);
                 });
 
             modelBuilder.Entity("Movies4All.App.Models.Genre", b =>
@@ -111,7 +111,7 @@ namespace Movies4All.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Genres");
+                    b.ToTable("Genres", (string)null);
                 });
 
             modelBuilder.Entity("Movies4All.App.Models.Movie", b =>
@@ -149,7 +149,7 @@ namespace Movies4All.Data.Migrations
 
                     b.HasIndex("RatingId");
 
-                    b.ToTable("Movies");
+                    b.ToTable("Movies", (string)null);
                 });
 
             modelBuilder.Entity("Movies4All.App.Models.Rating", b =>
@@ -172,7 +172,30 @@ namespace Movies4All.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Ratings");
+                    b.ToTable("Ratings", (string)null);
+                });
+
+            modelBuilder.Entity("Movies4All.Core.Models.Favorite", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("MovieId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MovieId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Favorites", (string)null);
                 });
 
             modelBuilder.Entity("Movies4All.Core.Models.Image", b =>
@@ -194,7 +217,47 @@ namespace Movies4All.Data.Migrations
 
                     b.HasIndex("MovieId");
 
-                    b.ToTable("Image");
+                    b.ToTable("Image", (string)null);
+                });
+
+            modelBuilder.Entity("Movies4All.Core.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Lastname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(max)")
+                        .HasDefaultValue("User");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("Movies4All.App.Models.Cast", b =>
@@ -248,6 +311,25 @@ namespace Movies4All.Data.Migrations
                     b.Navigation("Rating");
                 });
 
+            modelBuilder.Entity("Movies4All.Core.Models.Favorite", b =>
+                {
+                    b.HasOne("Movies4All.App.Models.Movie", "Movies")
+                        .WithMany()
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Movies4All.Core.Models.User", "Users")
+                        .WithMany("Favories")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Movies");
+
+                    b.Navigation("Users");
+                });
+
             modelBuilder.Entity("Movies4All.Core.Models.Image", b =>
                 {
                     b.HasOne("Movies4All.App.Models.Movie", "Movie")
@@ -284,6 +366,11 @@ namespace Movies4All.Data.Migrations
             modelBuilder.Entity("Movies4All.App.Models.Rating", b =>
                 {
                     b.Navigation("Movies");
+                });
+
+            modelBuilder.Entity("Movies4All.Core.Models.User", b =>
+                {
+                    b.Navigation("Favories");
                 });
 #pragma warning restore 612, 618
         }

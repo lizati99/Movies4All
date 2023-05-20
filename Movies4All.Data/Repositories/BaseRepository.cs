@@ -41,7 +41,15 @@ namespace Movies4All.Data.Repositories
                 
             return await query.ToListAsync();
         }
+        public async Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> criteria, string[] includes = null)
+        {
+            IQueryable<TEntity> query = _context.Set<TEntity>().Where(criteria);
+            if (includes != null)
+                foreach (var entity in includes)
+                    query = query.Include(entity);
 
+            return await query.ToListAsync();
+        }
         public bool isValidEntity(Expression<Func<TEntity,bool>> criteria)
         {
             return _context.Set<TEntity>().Any(criteria);

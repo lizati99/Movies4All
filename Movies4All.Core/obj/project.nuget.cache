@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wnEjJDQMQRMjKpWwuxTSMPct/UFzPQN0hGCgk8/RG8006YfpSW74WK9Ls0T1pYPZgHT3n1n7nsvxzZ5XzQUeOg==",
+  "dgSpecHash": "OY7XQjCNSsMV11fSa8TNr2l2PA408/P0cPD5/Ir5RRkccXYSAtQCfO8/53rNexQZLvQb0sF8MvwWG0+HuDElFg==",
   "success": true,
   "projectFilePath": "C:\\Users\\MSI\\Desktop\\Movies4All\\Movies4All.Core\\Movies4All.Core.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,7 @@
     "C:\\Users\\MSI\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\MSI\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\MSI\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\MSI\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\MSI\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
     "C:\\Users\\MSI\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
     "C:\\Users\\MSI\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",

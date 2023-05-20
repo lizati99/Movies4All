@@ -13,5 +13,6 @@ namespace Movies4All.Core.Interfaces
         Tuple<int, string, List<Image>> SaveImage(int movieId, List<IFormFile> imageFile);
         Tuple<int, string, Image> SaveImage(int movieId, IFormFile imageFile);
         bool DeleteImage(string imageFileName);
+        Tuple<bool,string> DeleteAllImage(IEnumerable<Image> imagesFile);
     }
 }

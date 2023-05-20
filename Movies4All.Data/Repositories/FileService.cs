@@ -35,7 +35,7 @@ namespace Movies4All.Data.Repositories
 
                     var ext = Path.GetExtension(imageFile.FileName);
                     newFileName = Guid.NewGuid().ToString() + "_" + imageFile.FileName;
-                    if (!allowedExtensions.Contains(ext))
+                    if (!allowedExtensions.Contains(ext.ToLower()))
                         return Tuple.Create(0,msg,uploadedImages);//or new Tuple<int, string>(0,msg)
 
                     var fileWithPath = Path.Combine(uploadsFolder, newFileName);
@@ -62,7 +62,7 @@ namespace Movies4All.Data.Repositories
         {
             try
             {
-                var uploadsFile = Path.Combine(_environment.WebRootPath, "Uploads\\",imageFileName);
+                var uploadsFile = Path.Combine(_environment.ContentRootPath, "Uploads\\",imageFileName);
                 if (File.Exists(uploadsFile))
                 {
                     File.Delete(uploadsFile);
@@ -72,6 +72,31 @@ namespace Movies4All.Data.Repositories
             }catch(Exception ex) 
             {
                 return false;
+            }
+        }
+        public Tuple<bool, string> DeleteAllImage(IEnumerable<Image> imagesFile)
+        {
+            var rowAffected = 0;
+            string status= $"({rowAffected} rows affected)";
+            try
+            {
+                foreach (var image in imagesFile)
+                {
+                    var uploadsFile = Path.Combine(_environment.ContentRootPath, "Uploads\\", image.Name);
+                    if (File.Exists(uploadsFile))
+                    {
+                        File.Delete(uploadsFile);
+                        rowAffected += 1;
+                        continue;
+                    }
+                }
+                if (rowAffected > 0)
+                    return Tuple.Create(true, status);
+                return Tuple.Create(false, status);
+            }
+            catch (Exception ex)
+            {
+                return Tuple.Create(false, status);
             }
         }
 
@@ -86,10 +111,10 @@ namespace Movies4All.Data.Repositories
                 if (!Directory.Exists(uploadsFolder))
                     Directory.CreateDirectory(uploadsFolder);
 
-                var ext = Path.GetExtension(imageFile.Name);
-                newFileName = Guid.NewGuid().ToString() + "_" + imageFile.Name;
+                var ext = Path.GetExtension(imageFile.FileName);
+                newFileName = Guid.NewGuid().ToString() + "_" + imageFile.FileName;
                 var allowedExtensions = new string[] { ".jpg", ".jpeg", ".png" };
-                if (!allowedExtensions.Contains(ext))
+                if (!allowedExtensions.Contains(ext.ToLower()))
                 {
                     string msg = string.Format("Only {0} extensions are allowed", string.Join(",", allowedExtensions));
                     return Tuple.Create(0, msg, image);//or new Tuple<int, string>(0,msg)

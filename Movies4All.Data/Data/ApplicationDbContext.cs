@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 using Movies4All.App.Models;
+using Movies4All.Core.Consts;
 using Movies4All.Core.Models;
 
 namespace Movies4All.App.Data
@@ -25,6 +23,10 @@ namespace Movies4All.App.Data
         public virtual DbSet<Movie> Movies { get; set; } = null!;
         public virtual DbSet<Rating> Ratings { get; set; } = null!;
         public virtual DbSet<Image> Image { get; set; } = null!;
+        public virtual DbSet<User> Users { get; set; } = null!;
+        public virtual DbSet<Favorite> Favorites { get; set; } = null!;
+
+
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -38,6 +40,18 @@ namespace Movies4All.App.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e=>e.Id).UseIdentityColumn();
+                entity.Property(e=>e.CreatedAt).HasDefaultValueSql("GETDATE()");
+                entity.Property(e => e.Role).HasDefaultValue(RoleConst.User);
+            });
+            modelBuilder.Entity<Favorite>(entity =>
+            {
+                entity.HasKey(x => x.Id);
+                entity.Property(e => e.Id).UseIdentityColumn();
+            });
             //Add Movie Images
             modelBuilder.Entity<Movie>(entity =>
             {

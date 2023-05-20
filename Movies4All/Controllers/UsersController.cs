@@ -101,7 +101,7 @@ namespace Movies4All.App.Controllers
         //For admin Only
         [HttpGet]
         [Route("Admins")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = RoleConst.Admin)]
         public IActionResult AdminEndPoint()
         {
             var currentUser = GetCurrentUser();

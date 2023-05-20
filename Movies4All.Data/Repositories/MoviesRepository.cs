@@ -21,9 +21,12 @@ namespace Movies4All.Data.Repositories
             this._context=context;
         }
 
-        public Task<IEnumerable<MovieDetailsDto>> SpecialGetAllAsync(string[] includes = null)
+        public async Task<IEnumerable<Movie>> SpecialGetAllAsync()
         {
-            throw new NotImplementedException();
+            var movies = await _context.Movies
+                                        .Include(m => m.Images).ToListAsync();
+            return movies;
+
         }
         public int GetLastId()
         {
