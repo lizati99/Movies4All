@@ -60,7 +60,7 @@ namespace Movies4All.Core.Mapper
             CreateMap<RegistreUserDto, User>();
             CreateMap<User, UserDto>()
                 .ForMember(dest => dest.Username, act => act.MapFrom(src => src.Lastname + " " + src.FirstName));
-
+            CreateMap<User, ResetPassword>();
         }
     }
 }

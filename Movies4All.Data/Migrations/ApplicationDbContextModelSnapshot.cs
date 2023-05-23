@@ -42,7 +42,7 @@ namespace Movies4All.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Actors", (string)null);
+                    b.ToTable("Actors");
                 });
 
             modelBuilder.Entity("Movies4All.App.Models.Cast", b =>
@@ -94,7 +94,7 @@ namespace Movies4All.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Directors", (string)null);
+                    b.ToTable("Directors");
                 });
 
             modelBuilder.Entity("Movies4All.App.Models.Genre", b =>
@@ -111,7 +111,7 @@ namespace Movies4All.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Genres", (string)null);
+                    b.ToTable("Genres");
                 });
 
             modelBuilder.Entity("Movies4All.App.Models.Movie", b =>
@@ -149,7 +149,7 @@ namespace Movies4All.Data.Migrations
 
                     b.HasIndex("RatingId");
 
-                    b.ToTable("Movies", (string)null);
+                    b.ToTable("Movies");
                 });
 
             modelBuilder.Entity("Movies4All.App.Models.Rating", b =>
@@ -172,7 +172,7 @@ namespace Movies4All.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Ratings", (string)null);
+                    b.ToTable("Ratings");
                 });
 
             modelBuilder.Entity("Movies4All.Core.Models.Favorite", b =>
@@ -195,7 +195,7 @@ namespace Movies4All.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Favorites", (string)null);
+                    b.ToTable("Favorites");
                 });
 
             modelBuilder.Entity("Movies4All.Core.Models.Image", b =>
@@ -217,7 +217,7 @@ namespace Movies4All.Data.Migrations
 
                     b.HasIndex("MovieId");
 
-                    b.ToTable("Image", (string)null);
+                    b.ToTable("Image");
                 });
 
             modelBuilder.Entity("Movies4All.Core.Models.User", b =>
@@ -249,15 +249,27 @@ namespace Movies4All.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("RestPassword")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("RestTokenExpires")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Role")
                         .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(max)")
                         .HasDefaultValue("User");
 
+                    b.Property<string>("VerificationToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("VirefieAT")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Movies4All.App.Models.Cast", b =>

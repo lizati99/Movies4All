@@ -16,7 +16,7 @@ namespace Movies4All.App.Controllers
     
     [Route("api/[controller]")]
     [ApiController]
-    public class MoviesController : ControllerBase
+    public class MoviesController : ControllerBase 
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -26,6 +26,7 @@ namespace Movies4All.App.Controllers
             this._unitOfWork = unitOfWork;
             this._mapper = mapper;
         }
+        
         [HttpGet("GetAllMovies")]
         public async Task<IActionResult> GetAll()
         {

@@ -3707,19 +3707,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MSI\\.nuget\\packages\\": {}
+    "C:\\Users\\Omar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MSI\\Desktop\\Movies4All\\Movies4All.Data\\Movies4All.Data.csproj",
+      "projectUniqueName": "D:\\all vidio\\project\\Movies4All\\Movies4All.Data\\Movies4All.Data.csproj",
       "projectName": "Movies4All.Data",
-      "projectPath": "C:\\Users\\MSI\\Desktop\\Movies4All\\Movies4All.Data\\Movies4All.Data.csproj",
-      "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MSI\\Desktop\\Movies4All\\Movies4All.Data\\obj\\",
+      "projectPath": "D:\\all vidio\\project\\Movies4All\\Movies4All.Data\\Movies4All.Data.csproj",
+      "packagesPath": "C:\\Users\\Omar\\.nuget\\packages\\",
+      "outputPath": "D:\\all vidio\\project\\Movies4All\\Movies4All.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\MSI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Omar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3733,8 +3733,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\MSI\\Desktop\\Movies4All\\Movies4All.Core\\Movies4All.Core.csproj": {
-              "projectPath": "C:\\Users\\MSI\\Desktop\\Movies4All\\Movies4All.Core\\Movies4All.Core.csproj"
+            "D:\\all vidio\\project\\Movies4All\\Movies4All.Core\\Movies4All.Core.csproj": {
+              "projectPath": "D:\\all vidio\\project\\Movies4All\\Movies4All.Core\\Movies4All.Core.csproj"
             }
           }
         }

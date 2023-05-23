@@ -45,7 +45,7 @@ namespace Movies4All.App.Controllers
                         new Claim("Lastname",user.Lastname),
                         new Claim("Username",$"{user.Lastname} {user.FirstName}"),
                         new Claim("Email",user.Email),
-                        new Claim("Role",user.Role)
+                        new Claim(ClaimTypes.Role,user.Role)
                     };
                     var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
                     var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

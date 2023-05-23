@@ -26,6 +26,10 @@ namespace Movies4All.Core.Models
         [Required]
         public string Password { get; set; }
         public DateTime CreatedAt { get; set; }
+        public string? VerificationToken { get; set; }
+        public string? RestPassword { get; set; }
+        public DateTime? VirefieAT { get; set; }
+        public DateTime? RestTokenExpires { get; set; }
         public virtual ICollection<Favorite> Favories { get; set; }
     }
 }
