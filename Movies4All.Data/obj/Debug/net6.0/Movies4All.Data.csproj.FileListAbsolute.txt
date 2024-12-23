@@ -32,3 +32,20 @@ C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\obj\Debug\net6.0\refint\Movies4A
 C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.pdb
 C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.genruntimeconfig.cache
 C:\Users\MSI\Desktop\Movies4All\Movies4All.Data\obj\Debug\net6.0\ref\Movies4All.Data.dll
+D:\all vidio\project\Movies4All\Movies4All.Data\bin\Debug\net6.0\Movies4All.Data.deps.json
+D:\all vidio\project\Movies4All\Movies4All.Data\bin\Debug\net6.0\Movies4All.Data.runtimeconfig.json
+D:\all vidio\project\Movies4All\Movies4All.Data\bin\Debug\net6.0\Movies4All.Data.dll
+D:\all vidio\project\Movies4All\Movies4All.Data\bin\Debug\net6.0\Movies4All.Data.pdb
+D:\all vidio\project\Movies4All\Movies4All.Data\bin\Debug\net6.0\Movies4All.Core.dll
+D:\all vidio\project\Movies4All\Movies4All.Data\bin\Debug\net6.0\Movies4All.Core.pdb
+D:\all vidio\project\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.csproj.AssemblyReference.cache
+D:\all vidio\project\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\all vidio\project\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.AssemblyInfoInputs.cache
+D:\all vidio\project\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.AssemblyInfo.cs
+D:\all vidio\project\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.csproj.CoreCompileInputs.cache
+D:\all vidio\project\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.csproj.CopyComplete
+D:\all vidio\project\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.dll
+D:\all vidio\project\Movies4All\Movies4All.Data\obj\Debug\net6.0\refint\Movies4All.Data.dll
+D:\all vidio\project\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.pdb
+D:\all vidio\project\Movies4All\Movies4All.Data\obj\Debug\net6.0\Movies4All.Data.genruntimeconfig.cache
+D:\all vidio\project\Movies4All\Movies4All.Data\obj\Debug\net6.0\ref\Movies4All.Data.dll

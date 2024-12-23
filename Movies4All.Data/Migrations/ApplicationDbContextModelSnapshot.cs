@@ -249,11 +249,23 @@ namespace Movies4All.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("RestPassword")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("RestTokenExpires")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Role")
                         .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(max)")
                         .HasDefaultValue("User");
+
+                    b.Property<string>("VerificationToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("VirefieAT")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 

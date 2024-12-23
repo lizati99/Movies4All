@@ -24,7 +24,7 @@ namespace Movies4All.App.Controllers
             this._unitOfWork = unitOfWork;
             this._mapper = mapper;
         }
-        [HttpGet("GetAllAdmin")]
+        [HttpGet("GetAllAdmin"), Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllAdmin()
         {
             var users = await _unitOfWork.Users.GetAllAsync(u => u.Role == RoleConst.Admin);
@@ -33,8 +33,7 @@ namespace Movies4All.App.Controllers
 
             return Ok(_mapper.Map<IEnumerable<UserDto>>(users));
         }
-
-        [HttpGet("GetAllUser")]
+          [HttpGet("GetAllUser"), Authorize(Roles = "User")]
         public async Task<IActionResult> GetAllUser()
         {
             var users = await _unitOfWork.Users.GetAllAsync(u => u.Role == RoleConst.User);
@@ -61,7 +60,6 @@ namespace Movies4All.App.Controllers
             var user = _unitOfWork.Users.GetById(u => u.Email == dto.Email);
             if (user != null)
                 return StatusCode(StatusCodes.Status400BadRequest, new Response { Status = "Error", Message = "User is exist!!!" });
-
             dto.Password = bc.HashPassword(dto.Password);
             user = _mapper.Map<User>(dto);
             _unitOfWork.Users.Add(user);

@@ -22,3 +22,15 @@ C:\Users\MSI\Desktop\Movies4All\Movies4All.Core\obj\Debug\net6.0\Movies4All.Core
 C:\Users\MSI\Desktop\Movies4All\Movies4All.Core\obj\Debug\net6.0\refint\Movies4All.Core.dll
 C:\Users\MSI\Desktop\Movies4All\Movies4All.Core\obj\Debug\net6.0\Movies4All.Core.pdb
 C:\Users\MSI\Desktop\Movies4All\Movies4All.Core\obj\Debug\net6.0\ref\Movies4All.Core.dll
+D:\all vidio\project\Movies4All\Movies4All.Core\bin\Debug\net6.0\Movies4All.Core.deps.json
+D:\all vidio\project\Movies4All\Movies4All.Core\bin\Debug\net6.0\Movies4All.Core.dll
+D:\all vidio\project\Movies4All\Movies4All.Core\bin\Debug\net6.0\Movies4All.Core.pdb
+D:\all vidio\project\Movies4All\Movies4All.Core\obj\Debug\net6.0\Movies4All.Core.csproj.AssemblyReference.cache
+D:\all vidio\project\Movies4All\Movies4All.Core\obj\Debug\net6.0\Movies4All.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\all vidio\project\Movies4All\Movies4All.Core\obj\Debug\net6.0\Movies4All.Core.AssemblyInfoInputs.cache
+D:\all vidio\project\Movies4All\Movies4All.Core\obj\Debug\net6.0\Movies4All.Core.AssemblyInfo.cs
+D:\all vidio\project\Movies4All\Movies4All.Core\obj\Debug\net6.0\Movies4All.Core.csproj.CoreCompileInputs.cache
+D:\all vidio\project\Movies4All\Movies4All.Core\obj\Debug\net6.0\Movies4All.Core.dll
+D:\all vidio\project\Movies4All\Movies4All.Core\obj\Debug\net6.0\refint\Movies4All.Core.dll
+D:\all vidio\project\Movies4All\Movies4All.Core\obj\Debug\net6.0\Movies4All.Core.pdb
+D:\all vidio\project\Movies4All\Movies4All.Core\obj\Debug\net6.0\ref\Movies4All.Core.dll
